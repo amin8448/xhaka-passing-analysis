@@ -1,50 +1,79 @@
-# Granit Xhaka's Passing Patterns and Network Analysis
+# Granit Xhaka: Passing Network & Performance Analysis (2023-24)
 
-## Project Overview
+### Introduction
 
-[cite_start]This project provides an in-depth analysis of Granit Xhaka's passing patterns and his role in Bayer Leverkusen's build-up play during their highly successful 2023-2024 season.  [cite_start]The analysis utilizes data from Statsbomb to examine passing networks, key passing metrics, and on-field pass locations to understand Xhaka's performance and contribution to the team. 
+This project provides a thorough examination of Granit Xhaka's passing patterns and network analysis to understand his pivotal role in Bayer Leverkusen's historic undefeated 2023-2024 season. The analysis uses open data from Statsbomb to quantify his contributions to the team's build-up play and chance creation.
 
-## Key Findings
+> The goal is to move beyond subjective observation and use empirical data to assess Xhaka's effectiveness as a central midfielder, quantifying his impact on game outcomes.
 
-- [cite_start]**Central Role in the Network**: Network graph analysis reveals that Xhaka is a central hub in Bayer Leverkusen's passing network, connecting frequently with his defensive partners.  This highlights his crucial role in initiating the team's build-up play.
-- [cite_start]**Passing Metrics**: The analysis delves into key passing metrics such as goal assists, shot assists, and the expected goals (xG) value of the shots that result from his passes (`shot_statsbomb_xg`). 
-- **Low Conversion of Shot Assists**: A key insight is that while Xhaka generates a high number of passes that lead to shots (shot assists), these opportunities have a low probability of being converted into goals. This could be attributed to several factors, including the quality of the pass, the receiver's position, or the defensive pressure faced by the receiver.
-- **Heatmap Analysis**: A heatmap of Xhaka's pass start locations shows his activity is primarily concentrated in the central area of the pitch, with a tendency to favor his left side when distributing the ball.
+---
 
-## Data Source
+### Key Visualizations
 
-[cite_start]The analysis is based on open data provided by **Statsbomb**.  The data specifically focuses on pass events from the Bundesliga 2023-2024 season.
+<table>
+  <tr>
+    <td align="center"><strong>Team Passing Network</strong><br><em>Shows Xhaka as the central hub of the team.</em></td>
+    <td align="center"><strong>Xhaka's Passing Distribution</strong><br><em>Illustrates his diverse connections across the pitch.</em></td>
+  </tr>
+  <tr>
+    <td><img src="figure 1.jpg" alt="Team Passing Network Analysis" width="100%"></td>
+    <td><img src="figure 2.jpg" alt="Xhaka's Passing Network" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Key Pass Locations</strong><br><em>Highlights his role in the build-up and final third.</em></td>
+    <td align="center"><strong>Passing Heatmap</strong><br><em>Visualizes his primary zones of operation.</em></td>
+  </tr>
+  <tr>
+    <td><img src="figure 3.jpg" alt="Key Pass Locations" width="100%"></td>
+    <td><img src="figure 4.jpg" alt="Passing Heatmap" width="100%"></td>
+  </tr>
+</table>
 
-## Getting Started
+---
 
-To run the analysis yourself, follow these steps:
+### Key Findings
 
-### Prerequisites
+* **Central Hub of the Network:** The network graphs clearly illustrate that Granit Xhaka functions as the central hub in Bayer Leverkusen's passing network, connecting defense, midfield, and attack. His positioning and high volume of connections are pivotal to the team's ball circulation and tempo.
+* **Versatile Playmaker:** Xhaka demonstrates incredible versatility, capable of switching play, initiating forward attacks, or recycling possession as needed. His connections are well-distributed to teammates in all areas of the pitch.
+* **Build-up Specialist:** While he makes a significant number of key passes, his primary role is centered on ball transition and progressing play into the final third, rather than delivering the final assist. The data shows a low expected assists (xA) value, suggesting his key passes create opportunities that precede the final shot.
+* **Zone of Influence:** The heatmap confirms his activity is concentrated in the central midfield, with a notable tendency to operate from and pass through the left side of the pitch.
 
-Make sure you have Python installed on your system. You will also need the following libraries:
+---
 
-- `pandas`
-- `statsbombpy`
-- `matplotlib`
-- `seaborn`
-- `networkx`
-- `mplsoccer`
+### Tech Stack
 
-### Installation
+* **Python 3.x**
+* **Libraries:** pandas, NumPy, Matplotlib, Seaborn, NetworkX
+* **Football-Specific Libraries:** `statsbombpy` (for data access), `mplsoccer` (for pitch visualization)
 
-You can install the required libraries using pip:
+---
 
-```bash
-pip install pandas statsbombpy matplotlib seaborn networkx mplsoccer
-```
+### Setup and Installation
 
-### Usage
+To replicate this analysis, follow these steps:
 
-1.  Clone this repository to your local machine.
-2.  Open the Jupyter Notebook `The athletics Interview.ipynb` using Jupyter Notebook or JupyterLab.
-3.  Run the cells in the notebook sequentially to execute the analysis and generate the visualizations.
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/amin8448/xhaka-passing-analysis.git](https://github.com/amin8448/xhaka-passing-analysis.git)
+    cd xhaka-passing-analysis
+    ```
 
-## Project Files
+2.  **Install the required packages:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-- **`Granit Xhaka’s Passing Patterns and Network.pdf`**: The detailed report of the analysis, including interpretations and conclusions.
-- **`The athletics Interview.ipynb`**: The Jupyter Notebook containing the Python code used for data fetching, analysis, and visualization.
+3.  **Run the analysis:**
+    * The primary analysis is contained within the Jupyter Notebook `analysis.ipynb`. Open and run the cells to reproduce the findings and visualizations.
+
+---
+
+### Data Source
+
+The data used for this project is the open data provided by [**Statsbomb**](https://statsbomb.com/what-we-do/open-data/). It was accessed programmatically using the `statsbombpy` Python package.
+
+---
+
+### License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
